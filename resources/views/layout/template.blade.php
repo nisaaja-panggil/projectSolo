@@ -95,31 +95,6 @@
                                 </p>
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link {{($title==='Produk')?'active':''}}">
-                                <i class="nav-icon fas fa-boxes"></i>
-                                <p>
-                                    Produk
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Input Produk</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Laporan Produk</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link {{ ($title==='Customer')?'active':''}}">
                                 <i class="nav-icon fas fa-users"></i>
@@ -129,7 +104,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ ($title==='Users')?'active':''}}">
+                            <a href="{{route('user.index')}}" class="nav-link {{ ($title==='User')?'active':''}}">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Users
