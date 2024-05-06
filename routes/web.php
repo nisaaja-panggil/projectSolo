@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\anggotacontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dasbord',[
+        "title"=>"Dashboard"
+    ]);
 });
+
+Route::resource('orang', anggotacontroller::class)->except('destroy');

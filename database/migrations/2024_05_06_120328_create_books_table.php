@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('pengarang');
             $table->string('penerbit');
             $table->text('sinopsis');
-            $table->string('status');
+            $table->enum('status', ['pinjam', 'kembali']);
             $table->string('cover')->nullable();
             $table->timestamps();
         });

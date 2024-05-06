@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('pinjam_bukus', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('book_id')->unsigned();
+            $table->bigInteger('admin_id')->unsigned();
             $table->bigInteger('anggota_id')->unsigned();
-            $table->string('status');
             $table->timestamps();
         });
+        Schema::table('pinjam_bukus', function (Blueprint $table) {
+            $table->foreign('admin_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('anggota_id')->references('id')->on('anggotas')->onUpdate('cascade')->onDelete('cascade');
+  
+}); 
     }
 
     /**

@@ -15,10 +15,16 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('pinjam_buku_id')->unsigned();
             $table->bigInteger('book_id')->unsigned();
+            $table->enum('status', ['pinjam', 'kembali']);
             $table->date('tanggal_pinjam');
             $table->date('tanggal_kembali');
             $table->timestamps();
         });
+        Schema::table('detail_pinjams', function (Blueprint $table) {
+            $table->foreign('pinjam_buku_id')->references('id')->on('pinjam_bukus')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('book_id')->references('id')->on('books')->onUpdate('cascade')->onDelete('cascade');
+  
+});
     }
 
     /**
@@ -26,6 +32,14 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('detail_pinjams', function (Blueprint $table) {
+            $table->dropForeign('detail_pinjams_book_id_foreign');
+        });
+
+        Schema::table('detail_pinjams', function (Blueprint $table) {
+            $table->dropIndex('detail_pinjams_pinjam_bukus_id_foreign');
+        });
+
         Schema::dropIfExists('detail_pinjams');
     }
 };
