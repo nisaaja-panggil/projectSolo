@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\anggotacontroller;
+use App\Http\Controllers\bookcontroller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,5 @@ Route::resource('user', UserController::class)->except('destroy','show','update'
 Route::get('login',[LoginController::class,'loginView'])->name('login');
 route::post('login',[LoginController::class,'authenticate']);
 Route::post('logout',[LoginController::class,'logout'])->middleware('auth');
+Route::resource('book', bookcontroller::class);
+Route::POST('carii',[bookcontroller::class,'cari'])->name('caribook');

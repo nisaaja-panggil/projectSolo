@@ -9,22 +9,23 @@ class bookcontroller extends Controller
 {
     //
     public function index(){
-        return view('book.index',["data"=>book::paginate(8)]);
+        return view('book.index',["title" => "koleksi buku","data"=>book::paginate(8)]);
+       
     }
 
     public function cari(Request $request){
         $cari=$request->cari;
-        $book=book::where('nama','LIKE','%'.$cari.'%')
+        $book=book::where('judul','LIKE','%'.$cari.'%')
                       ->paginate(8);
         return view('book.index',['data'=>$book]);
     }
     public function create(){
-        return view('book.create');   
+        return view('book.create')->with(["title"=>"tambah data anggota"]);   
     }
 
     public function store(Request $request){
       $validasi=$request->validate([
-            "name"=>"required",
+            "judul"=>"required",
             "pengarang"=>"required",
             "penerbit"=>"required",
             "sinopsis"=>"required",
@@ -46,7 +47,7 @@ class bookcontroller extends Controller
 
     public function update(book $book,request $request){
         $validasi=$request->validate([
-            "name"=>"required",
+            "judul"=>"required",
             "pengarang"=>"required",
             "penerbit"=>"required",
             "sinopsis"=>"required",
