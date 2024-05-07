@@ -63,7 +63,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">nisa</a>
+                        <a href="#" class="d-block"> </a>
                     </div>
                 </div>
 

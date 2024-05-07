@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\anggotacontroller;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::resource('orang', anggotacontroller::class)->except('destroy');
-Route::resource('user', UserController::class)->except('destroy','show','update','edit','create');
+Route::resource('orang', anggotacontroller::class)->except('destroy')->middleware('auth');
+Route::resource('user', UserController::class)->except('destroy','show','update','edit','create')->middleware('auth');
+Route::get('login',[LoginController::class,'loginView'])->name('login');
+route::post('login',[LoginController::class,'authenticate']);
+Route::post('logout',[LoginController::class,'logout'])->middleware('auth');
