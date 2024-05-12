@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\book;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class bookcontroller extends Controller
@@ -65,8 +66,8 @@ class bookcontroller extends Controller
         book::where('id',$id)->Delete();
         return redirect()->route(('book.index'));
     }
-    public function show(anggota $orang):view{
-        return view('anggota.tampil',compact('orang'))
-                          ->with(["title"=>"data anggota"]);
+    public function show(book $book):View{
+        return view('book.tampil',compact('book'))
+                          ->with(["title"=>"data book"]);
     }
 }

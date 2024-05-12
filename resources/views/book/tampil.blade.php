@@ -16,7 +16,7 @@
 
     <div class="card card-secondary">
         <div class="card-header">
-            <h3 class="card-title">Data anggota</h3>
+            <h3 class="card-title">Data buku</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -25,19 +25,23 @@
             @method('PUT')
             <div class=" card-body">
                 <div class="form-group">
-                    <label for="name">Nama anggota</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder=""
-                        value="{{ $orang->name }}" disabled>
+                    <label for="judul">judul buku</label>
+                    <input type="text" class="form-control" id="judul" name="judul" placeholder=""
+                        value="{{ $book->judul }}" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="gender">gender</label>
-                    <input type="text" class="form-control" id="gender" name="gender" value="{{ $orang->gender }}"
+                    <label for="pengarang">pengarang</label>
+                    <input type="text" class="form-control" id="pengarang" name="pengarang" value="{{ $book->pengarang }}"
                         disabled>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ $orang->email }}"
+                    <label for="penerbit">penerbit</label>
+                    <input type="text" class="form-control" id="penerbit" name="penerbit" value="{{ $book->penerbit }}"
                         disabled>
+                </div>
+                <div class="form-group">
+                    <label for="sinopsis">sinopsis</label><br>
+                        <textarea class="form-control" name="sinopsis" id="sinopsis" cols="30" rows="10" value="{{ $book->sinopsis }}" disabled>{{ $book->sinopsis }}</textarea>
                 </div>
             </div>
             <!-- /.card-body -->
