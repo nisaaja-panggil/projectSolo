@@ -33,6 +33,27 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-user mr-2"></i>{{ Auth::user()->name }}
+                        <span class="badge badge-warning navbar-badge"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">User Menu</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-user mr-2"></i> {{ Auth::user()->name }}
+                            <span class="float-right text-muted text-sm"></span>
+                        </a>
+    
+                        <div class="dropdown-divider"></div>
+                        <form action="logout" method="POST">
+                            @csrf
+                                <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button>
+                        </form>
+                    </div>
+                </li>
+            <ul class="navbar-nav ml-auto">
 
 
                 <li class="nav-item">
@@ -49,9 +70,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="{{ asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
+                <img src="{{ asset('dist/img/pngwing.com(1).png')}}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">POS</span>
+                <span class="brand-text font-weight-light"><B>PERPUSTAKAAN<B></span>
             </a>
 
             <!-- Sidebar -->
@@ -59,11 +80,11 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2"
+                        <img src="{{ asset('dist/img/user8-128x128.jpg')}}" class="img-circle elevation-2"
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block"> </a>
+                        <a href="#" class="d-block">{{auth::user()->name}}</a>
                     </div>
                 </div>
 
@@ -89,7 +110,7 @@
                             {{-- <a href="{{ route('kategori.index')}}" --}}
                             <a href="{{route('orang.index')}}"
                                 class="nav-link {{ ($title==='anggota') ? 'active':'' }}">
-                                <i class="nav-icon fas fa-th-large"></i>
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Anggota
                                 </p>
@@ -97,7 +118,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('book.index')}}" class="nav-link {{ ($title==='book')?'active':''}}">
-                                <i class="nav-icon fas fa-users"></i>
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     koleksi buku
                                 </p>
@@ -114,9 +135,9 @@
 
                         <li class="nav-item">
                             <a href="#" class="nav-link {{ ($title==='Pembelian') ? 'active':'' }}">
-                                <i class="nav-icon fas fa-cash-register"></i>
+                                <i class="nav-icon fas fa-bookmark"></i>
                                 <p>
-                                    Pembelian
+                                    peminjaman
                                 </p>
                             </a>
                         </li>
@@ -125,30 +146,9 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Laporan
-                                    <i class="fas fa-angle-left right"></i>
+                                    Laporan perpustakaan
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/tables/simple.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Harian</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/tables/data.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Bulanan</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/tables/jsgrid.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Tahunan</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
 

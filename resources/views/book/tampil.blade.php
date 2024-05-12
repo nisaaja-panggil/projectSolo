@@ -1,5 +1,5 @@
 @extends('layout.template')
-@section('judulh1','data - anggota')
+@section('judulh1','data - book')
 
 @section('konten')
 <div class="col-md-6">

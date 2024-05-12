@@ -35,7 +35,7 @@
                                 <p class="card-text">status: {{ $book->status }}</p>
                                 
                                 <a href="{{ route('book.edit', $book->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                <a href="{{ route('book.show',$book->id) }}" class="btn btn-success">show</a>
+                                <a href="{{ route('book.show',$book->id) }}" class="btn btn-sm btn-success">Show</a>
                             <form action="{{ route('book.destroy', $book->id) }}" method="post" class="d-inline">
                                 @csrf
                             @method('DELETE')
