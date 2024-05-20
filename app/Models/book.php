@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class book extends Model
 {
@@ -16,4 +17,7 @@ class book extends Model
         'status',
         'cover'
     ];
+    public function pinjam_buku():HasMany{
+        return $this->hasMany(pinjam_buku::class);
+    }
 }

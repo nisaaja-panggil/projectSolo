@@ -2,6 +2,7 @@
 use App\Http\Controllers\anggotacontroller;
 use App\Http\Controllers\bookcontroller;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\pinjamcontroller;
 use App\Http\Controllers\UserController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,4 @@ route::post('login',[LoginController::class,'authenticate']);
 Route::post('logout',[LoginController::class,'logout'])->middleware('auth');
 Route::resource('book', bookcontroller::class)->middleware('auth');
 Route::POST('carii',[bookcontroller::class,'cari'])->name('caribook')->middleware('auth');
+Route::resource('pinjam', pinjamcontroller::class)->middleware('auth');

@@ -41,13 +41,18 @@
                 <input type="text" class="form-control" id="sinopsis" name="sinopsis">
               </div>
               <div class="mb-3">
-                <label for="status" class="form-label">status</label>
-                <input type="text" class="form-control" id="status" name="status">
-              </div>
-              <div class="mb-3">
                 <label for="cover" class="form-label">cover</label>
                 <input type="file" class="form-control" id="cover" name="cover">
               </div>
+              <div class="mb-3">
+                <label for="status" class="form-label">status</label>
+                <select id="status" name="status"  class="form-label">
+                  <option value="pinjam">pinjam</option>
+                  <option value="kembali">kembali</option>
+                </select>
+              </div>
+              
+             
             <!-- /.card-body -->
 
             <div class="card-footer">

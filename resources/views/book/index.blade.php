@@ -28,7 +28,8 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">judul buku : {{ $book->judul }}</h5>
+                                
+                                <p class="card-text">judul buku : {{ $book->judul }}</p>
                                 <p class="card-text">pengarang : {{ $book->pengarang }}</p>
                                 <p class="card-text">penerbit: {{ $book->penerbit }}</p>
                                

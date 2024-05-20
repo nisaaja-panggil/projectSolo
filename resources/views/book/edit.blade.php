@@ -42,13 +42,15 @@
                 <input type="text" class="form-control" id="sinopsis" name="sinopsis" value="{{$book->sinopsis}}">
               </div>
               <div class="mb-3">
-                <label for="status" class="form-label">status</label>
-                <input type="text" class="form-control" id="status" name="status" value="{{$book->status}}">
-              </div>
-              <div class="mb-3">
                 <label for="cover" class="form-label">cover</label>
                 <input type="file" class="form-control" id="cover" name="cover" value="{{$book->cover}}">
               </div>
+              <div class="mb-3">
+                <label for="status" class="form-label">status</label>
+                <input type="text" class="form-control" id="status" name="status" value="{{$book->status}}">
+              </div>
+          
+              
             <!-- /.card-body -->
 
             <div class="card-footer">
