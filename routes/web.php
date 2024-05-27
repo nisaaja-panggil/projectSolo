@@ -32,3 +32,11 @@ Route::post('logout',[LoginController::class,'logout'])->middleware('auth');
 Route::resource('book', bookcontroller::class)->middleware('auth');
 Route::POST('carii',[bookcontroller::class,'cari'])->name('caribook')->middleware('auth');
 Route::resource('pinjam', pinjamcontroller::class)->middleware('auth');
+
+
+
+// Route::get('pinjam',function(){
+//     return view('pinjam.index',[
+//         "title"=>"pinjam"
+//     ]);
+// })->middleware('auth');

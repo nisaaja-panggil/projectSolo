@@ -137,16 +137,7 @@
                             <a href="{{route('pinjam.index')}}" class="nav-link {{ ($title==='peminjaman') ? 'active':'' }}">
                                 <i class="nav-icon fas fa-bookmark"></i>
                                 <p>
-                                    peminjaman
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Laporan perpustakaan
+                                   laporan peminjaman
                                 </p>
                             </a>
                         </li>

@@ -37,6 +37,7 @@
                                 
                                 <a href="{{ route('book.edit', $book->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                 <a href="{{ route('book.show',$book->id) }}" class="btn btn-sm btn-success">Show</a>
+                                <a href="{{ route('pinjam.create',$book->id) }}" class="btn btn-sm btn-success">pinjam</a>
                             <form action="{{ route('book.destroy', $book->id) }}" method="post" class="d-inline">
                                 @csrf
                             @method('DELETE')

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->bigInteger('admin_id')->unsigned();
             $table->bigInteger('anggota_id')->unsigned();
             $table->bigInteger('book_id')->unsigned();
-            $table->string('name');
             $table->date('tanggal_pinjam');
             $table->date('tanggal_kembali');
             $table->enum('status', ['pinjam', 'kembali']);

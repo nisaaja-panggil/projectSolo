@@ -33,45 +33,45 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{route('book.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('pinjam.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
-              <div class=" card-body">
-                <div class="form-group">
-                  <div class="mb-3">
-                    <label for="judul" class="form-label">judul buku</label>
-                    <input type="text" class="form-control" id="judul" name="judul">
+              <div class="card-body">
+                  <div class="form-group">
+                      <label for="anggota" class="form-label">Anggota</label>
+                      <select class="form-control" name="anggota_id">
+                          <option hidden>--Pilih Anggota--</option>
+                          @foreach($data as $dt)
+                          <option value="{{ $dt->id }}">{{ $dt->name }}</option>
+                          @endforeach
+                      </select><br>
+          
+                      <label for="buku" class="form-label">Buku</label>
+                      <select class="form-control" name="book_id">
+                          <option hidden>--Pilih Buku--</option>
+                          @foreach($databook as $dt)
+                          <option value="{{ $dt->id }}">{{ $dt->judul }}</option>
+                          @endforeach
+                      </select><br>
+          
+                      <label for="tanggal_pinjam" class="form-label">Tanggal Pinjam</label>
+                      <input type="date" class="form-control" id="tanggal_pinjam" name="tanggal_pinjam"><br>
+          
+                      <label for="tanggal_kembali" class="form-label">Tanggal Kembali</label>
+                      <input type="date" class="form-control" id="tanggal_kembali" name="tanggal_kembali"><br>
+          
+                      <label for="status" class="form-label">Status</label>
+                      <select id="status" name="status" class="form-control">
+                          <option value="pinjam">Pinjam</option>
+                          <option value="kembali">Kembali</option>
+                      </select><br>
                   </div>
-                  <div class="mb-3">
-                    <label for="pengarang" class="form-label">pengarang</label>
-                    <input type="text" class="form-control" id="pengarang" name="pengarang">
-                  </div>
-                  <div class="mb-3">
-                    <label for="penerbit" class="form-label">penerbit</label>
-                    <input type="text" class="form-control" id="penerbit" name="penerbit">
-                  </div>
-                  <div class="mb-3">
-                    <label for="sinopsis" class="form-label">sinopsis</label>
-                    <input type="text" class="form-control" id="sinopsis" name="sinopsis">
-                  </div>
-                  <div class="mb-3">
-                    <label for="cover" class="form-label">cover</label>
-                    <input type="file" class="form-control" id="cover" name="cover">
-                  </div>
-                  <div class="mb-3">
-                    <label for="status" class="form-label">status</label>
-                    <select id="status" name="status"  class="form-label">
-                      <option value="pinjam">pinjam</option>
-                      <option value="kembali">kembali</option>
-                    </select>
-                  </div>
-                  
-                 
-                <!-- /.card-body -->
-    
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-success float-right">Simpan</button>
-                </div>
-            </form>
+              </div>
+          
+              <div class="card-footer">
+                  <button type="submit" class="btn btn-success float-right">Simpan</button>
+              </div>
+          </form>
+          
         </div>
     </div>
 </div>

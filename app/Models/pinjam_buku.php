@@ -18,13 +18,30 @@ class pinjam_buku extends Model
         'tanggal_kembali',
         'status'
     ];
-    public function user():BelongsTo{
-        return $this->belongsTo(User::class);
+    // public function user():BelongsTo{
+    //     return $this->belongsTo(User::class);
+    // }
+    // public function anggota():BelongsTo{
+    //     return $this->belongsTo(anggota::class);
+    // }
+    // public function book():BelongsTo{
+    //     return $this->belongsTo(book::class);
+    // }
+
+
+    public function admin()
+    {
+        return $this->belongsTo(User::class, 'admin_id');
     }
-    public function anggota():BelongsTo{
-        return $this->belongsTo(anggota::class);
+
+    public function anggota()
+    {
+        return $this->belongsTo(anggota::class, 'anggota_id');
     }
-    public function book():BelongsTo{
-        return $this->belongsTo(book::class);
+
+    public function book()
+    {
+        return $this->belongsTo(book::class, 'book_id');
     }
 }
+
