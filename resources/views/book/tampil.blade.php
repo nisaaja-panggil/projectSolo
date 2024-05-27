@@ -24,9 +24,9 @@
             @csrf
             @method('PUT')
             <div class=" card-body">
-                <div class="col-md-6 d-flex align-items-center">
-                    <img src="{{ asset('storage/' . $book->cover) }}" class="img-fluid rounded-start ml-3" style="height: 250px; object-fit: foto;">
-                    </div>
+                <div class="d-flex justify-content-center mb-3">
+                    <img src="{{ asset('storage/' . $book->cover) }}" class="img-fluid rounded-start" style="height: 250px; object-fit: cover;">
+                </div>
                 <div class="form-group">
                     <label for="judul">judul buku</label>
                     <input type="text" class="form-control" id="judul" name="judul" placeholder=""
