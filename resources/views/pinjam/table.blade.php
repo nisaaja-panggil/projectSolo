@@ -7,13 +7,14 @@
 <!-- Toastr -->
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 @endsection
+
 @section('judulh1','Admin - pinjam')
+
 @section('konten')
 <div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
             <h2 class="card-title">Data pinjam</h2>
-            
         </div>
         <!-- /.card-header -->
 
@@ -22,17 +23,16 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>gender</th>
-                        <th>email</th>
-                        <th>email</th>
-                        <th>email</th>
-                        <th>email</th>
+                        <th>Nama Admin</th>
+                        <th>Nama Anggota</th>
+                        <th>Judul Buku</th>
+                        <th>Tanggal Pinjam</th>
+                        <th>Tanggal Kembali</th>
+                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-
                     @foreach($data as $dt)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
@@ -40,27 +40,22 @@
                         <td>{{ $dt->anggota->name }}</td>
                         <td>{{ $dt->book->judul }}</td>
                         <td>{{ $dt->tanggal_pinjam }}</td>
-                        <td>{{ $dt->tanggal_kembali }}</td>
+                        <td class="{{ $dt->status === 'kembali' ? 'text-black' : (\Carbon\Carbon::now()->gt($dt->tanggal_kembali) ? 'text-danger' : '') }}">
+                            {{ $dt->tanggal_kembali }}
+                        </td>
                         <td>{{ $dt->status }}</td>
                         <td>
                             <div class="btn-group">
                                 <a type="button" class="btn btn-warning" href="{{ route('pinjam.edit',$dt->id) }}">
-                                    <i class=" fas fa-edit"></i>
+                                    <i class="fas fa-edit"></i>
                                 </a>
-                                
                             </div>
-
-
                         </td>
                     </tr>
-
                     @endforeach
                 </tbody>
             </table>
-
         </div>
-
-
     </div>
 </div>
 @endsection
