@@ -49,7 +49,9 @@
                       <select class="form-control" name="book_id">
                           <option hidden>--Pilih Buku--</option>
                           @foreach($databook as $dt)
+                          @if($dt->status !== 'pinjam')
                           <option value="{{ $dt->id }}">{{ $dt->judul }}</option>
+                          @endif
                           @endforeach
                       </select><br>
           
