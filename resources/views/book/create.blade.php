@@ -46,11 +46,11 @@
               </div>
               <div class="mb-3">
                 <label for="status" class="form-label">status</label>
-                <select id="status" name="status"  class="form-label">
-                  <option value="pinjam">pinjam</option>
-                  <option value="kembali">kembali</option>
-                </select>
-              </div>
+                <select class="form-control" name="status">
+                    <option hidden>--Pilih status--</option>
+                    <option value="pinjam">pinjam</option>
+                    <option value="kembali">kembali</option>
+                </select><br>
               
              
             <!-- /.card-body -->

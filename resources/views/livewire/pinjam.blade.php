@@ -27,7 +27,7 @@
         </div>
         @endif
     
-        <div class="card card-success">
+        <div class="card bg-secondary">
             <div class="card-header">
                 <h3 class="card-title">Tambah Data pinjam</h3>
             </div>
@@ -61,16 +61,18 @@
                       <label for="tanggal_kembali" class="form-label">Tanggal Kembali</label>
                       <input type="date" class="form-control" id="tanggal_kembali" name="tanggal_kembali"><br>
           
-                      <label for="status" class="form-label">Status</label>
-                      <select id="status" name="status" class="form-control">
-                          <option value="pinjam">Pinjam</option>
-                          <option value="kembali">Kembali</option>
+                      <label for="status" class="form-label">status</label>
+                      <select class="form-control" name="status">
+                          <option hidden>--Pilih status--</option>
+                          <option value="pinjam">pinjam</option>
+                          <option value="kembali">kembali</option>
                       </select><br>
+                    
                   </div>
               </div>
           
               <div class="card-footer">
-                  <button type="submit" class="btn btn-success float-right">Simpan</button>
+                  <button type="submit" class="btn btn-primary float-right">Simpan</button>
               </div>
           </form>
           

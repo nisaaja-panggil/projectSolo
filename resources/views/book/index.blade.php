@@ -38,11 +38,11 @@
                                 <a href="{{ route('book.edit', $book->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                 <a href="{{ route('book.show',$book->id) }}" class="btn btn-sm btn-success">Show</a>
                                 <a href="{{ route('pinjam.create',$book->id) }}" class="btn btn-sm btn-success">pinjam</a>
-                            <form action="{{ route('book.destroy', $book->id) }}" method="post" class="d-inline">
-                                @csrf
-                            @method('DELETE')
-                            <input type="submit" class="btn btn-sm btn-danger" value="Delete">
-                            </form>
+                                <form action="{{ route('book.destroy', $book->id) }}" method="post" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" class="btn btn-sm btn-danger" value="Delete" onclick="return confirm('Apakah Anda yakin ingin menghapus buku ini?');">
+                                </form>
                             </div>
                         </div>
                     </div>

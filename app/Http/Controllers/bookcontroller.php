@@ -51,7 +51,6 @@ class bookcontroller extends Controller
             "pengarang"=>"required",
             "penerbit"=>"required",
             "sinopsis"=>"required",
-            "status"=>"required",
             "cover"=>"image|file|max:1024"
         ]);
         if ($request->file('cover')){
@@ -64,7 +63,7 @@ class bookcontroller extends Controller
 
     public function destroy($id){
         book::where('id',$id)->Delete();
-        return redirect()->route(('book.index'));
+        return redirect()->route(('book.index'))->with('success', 'Buku berhasil dihapus');;
     }
     public function show(book $book):View{
         return view('book.tampil',compact('book'))
